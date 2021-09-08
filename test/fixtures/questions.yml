@@ -2,8 +2,8 @@
 
 one:
   body: MyText
-  test_id: 1
+  test: one
 
 two:
   body: MyText
-  test_id: 1
+  test: two
