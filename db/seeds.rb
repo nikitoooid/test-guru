@@ -16,11 +16,11 @@ users = User.create!([
 
 tests = Test.create!([
   {title: 'Ruby beginner', level: 0, category_id: categories[0].id, user_id: users[0].id},
-  {title: 'Ruby intermediate', level: 1, category_id: categories[0].id, user_id: users[0].id},
-  {title: 'Ruby pro', level: 2, category_id: categories[0].id, user_id: users[0].id},
-  {title: 'Rails beginner', level: 0, category_id: categories[1].id, user_id: users[0].id},
-  {title: 'Rails intermediate', level: 1, category_id: categories[1].id, user_id: users[0].id},
-  {title: 'Rails pro', level: 2, category_id: categories[1].id, user_id: users[0].id}
+  {title: 'Ruby intermediate', level: 2, category_id: categories[0].id, user_id: users[0].id},
+  {title: 'Ruby pro', level: 5, category_id: categories[0].id, user_id: users[0].id},
+  {title: 'Rails beginner', level: 1, category_id: categories[1].id, user_id: users[0].id},
+  {title: 'Rails intermediate', level: 3, category_id: categories[1].id, user_id: users[0].id},
+  {title: 'Rails pro', level: 5, category_id: categories[1].id, user_id: users[0].id}
 ])
 
 questions = Question.create!([
