@@ -1,7 +1,7 @@
 Answer.delete_all
 Question.delete_all
-User.delete_all
 Test.delete_all
+User.delete_all
 Category.delete_all
 
 categories = Category.create!([
@@ -9,13 +9,18 @@ categories = Category.create!([
   {title: 'RoR'}
 ])
 
+users = User.create!([
+  {name: 'Ivan'},
+  {name: 'John Doe'}
+])
+
 tests = Test.create!([
-  {title: 'Ruby beginner', level: 0, category_id: categories[0].id},
-  {title: 'Ruby intermediate', level: 1, category_id: categories[0].id},
-  {title: 'Ruby pro', level: 2, category_id: categories[0].id},
-  {title: 'Rails beginner', level: 0, category_id: categories[1].id},
-  {title: 'Rails intermediate', level: 1, category_id: categories[1].id},
-  {title: 'Rails pro', level: 2, category_id: categories[1].id}
+  {title: 'Ruby beginner', level: 0, category_id: categories[0].id, user_id: users[0].id},
+  {title: 'Ruby intermediate', level: 1, category_id: categories[0].id, user_id: users[0].id},
+  {title: 'Ruby pro', level: 2, category_id: categories[0].id, user_id: users[0].id},
+  {title: 'Rails beginner', level: 0, category_id: categories[1].id, user_id: users[0].id},
+  {title: 'Rails intermediate', level: 1, category_id: categories[1].id, user_id: users[0].id},
+  {title: 'Rails pro', level: 2, category_id: categories[1].id, user_id: users[0].id}
 ])
 
 questions = Question.create!([
@@ -27,21 +32,16 @@ questions = Question.create!([
   {body: 'Question for Rails pro', test_id: tests[5].id}
 ])
 
-users = User.create!([
-  {name: 'Ivan'},
-  {name: 'John Doe'}
+answers = Answer.create!([
+  {body: "Test answer for Ruby beginner by #{users[1].name}", question_id: questions[0].id},
+  {body: "Test answer for Ruby intermediate by #{users[1].name}", question_id: questions[1].id},
+  {body: "Test answer for Ruby pro by #{users[1].name}", question_id: questions[2].id},
+  {body: "Test answer for Rails beginner by #{users[1].name}", question_id: questions[3].id},
+  {body: "Test answer for Rails intermediate by #{users[1].name}", question_id: questions[4].id},
+  {body: "Test answer for Rails pro by #{users[1].name}", question_id: questions[5].id}
 ])
 
 users.each do |user|
-  user.answers.create([
-    {body: "Test answer for Ruby beginner by #{user.name}", question_id: questions[0].id},
-    {body: "Test answer for Ruby intermediate by #{user.name}", question_id: questions[1].id},
-    {body: "Test answer for Ruby pro by #{user.name}", question_id: questions[2].id},
-    {body: "Test answer for Rails beginner by #{user.name}", question_id: questions[3].id},
-    {body: "Test answer for Rails intermediate by #{user.name}", question_id: questions[4].id},
-    {body: "Test answer for Rails pro by #{user.name}", question_id: questions[5].id}
-  ])
-
   2.times do
     random_test = tests.sample
     user.tests << random_test unless user.tests.exists?(id: random_test.id)
