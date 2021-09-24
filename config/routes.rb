@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   
   resources :tests do
-    resources :questions, swallow: true
+    resources :questions, shallow: true
   end
 
 end
