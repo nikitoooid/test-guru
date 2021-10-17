@@ -4,7 +4,7 @@
 
   <p>
     <%= form.label :body %><br>
-    <%= form.text_field :body %>
+    <%= form.text_area :body, id: :question_body, rows: 7, cols: 60  %>
   </p>
   
   <%= form.submit %>
