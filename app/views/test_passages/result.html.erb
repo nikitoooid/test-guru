@@ -1,0 +1,17 @@
+<h1>The <%= @test_passage.test.title %> Test was comleted!</h1>
+
+<div>
+  <% if @test_passage.passed? %>
+    <% css_class = 'green_font' %>
+    <%= content_tag :p, 'Test passed!' %>
+  <% else %>
+    <% css_class = 'red_font' %>
+    <%= content_tag :p, 'Test failed!' %>
+  <% end %>
+</div>
+
+<p>
+  <%= content_tag :p, "#{@test_passage.success_level}% correct answers", class: css_class %>
+</p>
+
+<%= link_to 'Back to tests', tests_path %>
