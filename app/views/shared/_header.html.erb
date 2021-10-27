@@ -1,0 +1,19 @@
+<header>
+  <div class="wrapper">
+    
+    <div>
+      <span class="project_name"><%= link_to "TestGuru", root_path %></span>
+    </div>
+    
+    <div>
+      <% if logged_in? %>
+        <p class="nav user">Welcome, <b><%= current_user.name %></b> Guru</p> |
+        <%= link_to 'Logout', logout_path%>
+      <% else %>
+        <%= link_to "Signup", signup_path %> |
+        <%= link_to "Login", login_path %>
+      <% end %>
+    </div>
+    
+  </div>
+</header>
