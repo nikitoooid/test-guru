@@ -10,8 +10,8 @@ categories = Category.create!([
 ])
 
 users = User.create!([
-  {name: 'Ivan', email: 'ivan@mail.com'},
-  {name: 'John Doe', email: 'john@mail.com'}
+  {name: 'Ivan', email: 'test@test.com', password: 'test', password_confirmation: 'test'},
+  {name: 'John Doe', email: 'john@mail.com', password: 'test', password_confirmation: 'test'}
 ])
 
 tests = Test.create!([
@@ -23,23 +23,9 @@ tests = Test.create!([
   {title: 'Rails pro', level: 5, category_id: categories[1].id, user_id: users[0].id}
 ])
 
-questions = Question.create!([
-  {body: 'Question for Ruby beginner', test_id: tests[0].id},
-  {body: 'Question for Ruby intermediate', test_id: tests[1].id},
-  {body: 'Question for Ruby pro', test_id: tests[2].id},
-  {body: 'Question for Rails beginner', test_id: tests[3].id},
-  {body: 'Question for Rails intermediate', test_id: tests[4].id},
-  {body: 'Question for Rails pro', test_id: tests[5].id}
-])
-
-answers = Answer.create!([
-  {body: "Test answer for Ruby beginner by #{users[1].name}", question_id: questions[0].id},
-  {body: "Test answer for Ruby intermediate by #{users[1].name}", question_id: questions[1].id},
-  {body: "Test answer for Ruby pro by #{users[1].name}", question_id: questions[2].id},
-  {body: "Test answer for Rails beginner by #{users[1].name}", question_id: questions[3].id},
-  {body: "Test answer for Rails intermediate by #{users[1].name}", question_id: questions[4].id},
-  {body: "Test answer for Rails pro by #{users[1].name}", question_id: questions[5].id}
-])
+# tests.each do |t|
+#   t.questions.create!(body: 'Test question')
+# end
 
 users.each do |user|
   2.times do
@@ -48,9 +34,7 @@ users.each do |user|
   end
 end
 
-
 p "Created #{Category.count} categories"
 p "Created #{Test.count} tests"
-p "Created #{Question.count} questions"
+# p "Created #{User.count} questions"
 p "Created #{User.count} users"
-p "Created #{Answer.count} answers"

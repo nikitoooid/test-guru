@@ -6,7 +6,10 @@ class ApplicationController < ActionController::Base
   private
 
   def authenticate_user!
-    redirect_to login_path unless current_user
+    unless current_user
+      session[:target_url] = request.url
+      redirect_to login_path
+    end
   end
 
   def current_user
