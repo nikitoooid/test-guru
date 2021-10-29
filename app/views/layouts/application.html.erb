@@ -11,6 +11,10 @@
   </head>
 
   <body>
+    <%= render 'shared/header' %>
+
+    <%= flash_messages %>
+
     <%= yield %>
 
     <%= render 'shared/footer' %>
