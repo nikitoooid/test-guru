@@ -1,6 +1,6 @@
 class Admin < User
 
-  validates :first_name, presense: true
-  validates :last_name, presense: true
+  validates :first_name, presence: true
+  validates :last_name, presence: true
 
 end

@@ -1,12 +1,17 @@
-class TestsController < ApplicationController
+class Admin::TestsController < Admin::BaseController
   
-  before_action :authenticate_user!
-  before_action :set_test, only: %i[start]
+  # before_action :authenticate_user!
+
+  before_action :set_test, only: %i[show start]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_test_not_found
 
   def index
     @tests = Test.all
+  end
+
+  def show
+
   end
 
   def start
