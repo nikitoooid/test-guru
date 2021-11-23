@@ -1,8 +1,6 @@
 class Admin::TestsController < Admin::BaseController
-  
-  # before_action :authenticate_user!
 
-  before_action :set_test, only: %i[show start]
+  before_action :set_test, only: %i[show edit update destroy]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_test_not_found
 
@@ -11,12 +9,34 @@ class Admin::TestsController < Admin::BaseController
   end
 
   def show
-
   end
 
-  def start
-    current_user.tests.push(@test)
-    redirect_to current_user.test_passage(@test)
+  def new
+    @test = current_user.created_tests.new
+  end
+
+  def create
+    @test = current_user.created_tests.new(test_params)
+
+    if @test.save
+      redirect_to admin_tests_path, alert: "Test #{@test.title} created!"
+    else
+      redirect_to admin_tests_path, alert: "Test creation failed!"
+    end
+  end
+
+  def update
+    if @test.update(test_params)
+      redirect_to admin_tests_path, alert: "Test #{@test.title} updated!"
+    else
+      redirect_to admin_tests_path, alert: 'Test updating failed!'
+    end 
+  end
+
+  def destroy
+    @test.destroy
+
+    redirect_to admin_tests_path, alert: 'Test deleted.'
   end
 
   private
@@ -27,5 +47,9 @@ class Admin::TestsController < Admin::BaseController
 
   def rescue_with_test_not_found
     render plain: 'Test not found!'
+  end
+
+  def test_params
+    params.require(:test).permit(:title, :level, :category_id)
   end
 end

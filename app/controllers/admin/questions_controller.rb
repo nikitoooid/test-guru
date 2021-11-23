@@ -21,18 +21,18 @@ class Admin::QuestionsController < Admin::BaseController
     @question = @test.questions.new(question_params)
 
     if @question.save
-      redirect_to admin_test_path(@question.test)
+      redirect_to admin_test_path(@question.test), alert: 'Question created!'
     else
-      render plain: 'Question creation failed!'
+      redirect_to admin_tests_path, alert: 'Question not created!'
     end
   end
 
   def update
     
     if @question.update(question_params)
-      redirect_to admin_test_path(@question.test)
+      redirect_to admin_test_path(@question.test), alert: 'Question updated!'
     else
-      render plain: 'Question updating failed!'
+      redirect_to admin_tests_path, alert: 'Question updating failed!'
     end 
   end
 
