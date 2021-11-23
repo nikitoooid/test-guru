@@ -19,7 +19,7 @@ class Admin::TestsController < Admin::BaseController
     @test = current_user.created_tests.new(test_params)
 
     if @test.save
-      redirect_to admin_tests_path, alert: "Test #{@test.title} created!"
+      redirect_to admin_test_path(@test), alert: "Test #{@test.title} created!"
     else
       redirect_to admin_tests_path, alert: "Test creation failed!"
     end
@@ -27,9 +27,9 @@ class Admin::TestsController < Admin::BaseController
 
   def update
     if @test.update(test_params)
-      redirect_to admin_tests_path, alert: "Test #{@test.title} updated!"
+      redirect_to admin_test_path(@test), alert: "Test #{@test.title} updated!"
     else
-      redirect_to admin_tests_path, alert: 'Test updating failed!'
+      redirect_to admin_test_path(@test), alert: 'Test updating failed!'
     end 
   end
 
