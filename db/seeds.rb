@@ -1,7 +1,7 @@
 Answer.delete_all
 Question.delete_all
 Test.delete_all
-User.delete_all
+# User.delete_all
 Category.delete_all
 
 categories = Category.create!([
@@ -9,10 +9,12 @@ categories = Category.create!([
   {title: 'RoR'}
 ])
 
-users = User.create!([
-  {name: 'Ivan', email: 'test@test.com', password: 'test', password_confirmation: 'test'},
-  {name: 'John Doe', email: 'john@mail.com', password: 'test', password_confirmation: 'test'}
-])
+# users = User.create!([
+#   {name: 'Ivan', email: 'test@test.com', password: 'test', password_confirmation: 'test'},
+#   {name: 'John Doe', email: 'john@mail.com', password: 'test', password_confirmation: 'test'}
+# ])
+
+users = [User.first]
 
 tests = Test.create!([
   {title: 'Ruby beginner', level: 1, category_id: categories[0].id, user_id: users[0].id},
@@ -27,14 +29,14 @@ tests = Test.create!([
 #   t.questions.create!(body: 'Test question')
 # end
 
-users.each do |user|
-  2.times do
-    random_test = tests.sample
-    user.tests << random_test unless user.tests.exists?(id: random_test.id)
-  end
-end
+# users.each do |user|
+#   2.times do
+#     random_test = tests.sample
+#     user.tests << random_test unless user.tests.exists?(id: random_test.id)
+#   end
+# end
 
 p "Created #{Category.count} categories"
 p "Created #{Test.count} tests"
 # p "Created #{User.count} questions"
-p "Created #{User.count} users"
+# p "Created #{User.count} users"

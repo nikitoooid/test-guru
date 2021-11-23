@@ -1,0 +1,12 @@
+<h1><%= question_header(@question) %></h1>
+
+<%= form_with model: [:admin, @test, @question] do |form| %>
+
+  <p>
+    <%= form.label :body %><br>
+    <%= form.text_area :body, id: :question_body, rows: 7, cols: 60  %>
+  </p>
+  
+  <%= form.submit %>
+
+<% end %>

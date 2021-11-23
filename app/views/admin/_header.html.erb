@@ -1,0 +1,19 @@
+<header>
+  <div class="wrapper">
+    
+    <div>
+      <span class="project_name"><%= link_to "TestGuru", root_path %></span>
+    </div>
+
+    <div>
+      <% if user_signed_in? %>
+        <p class="nav user">Welcome, <b><%= "#{current_user.first_name} #{current_user.last_name}" %></b> Master Guru</p> |
+        <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+      <% else %>
+        <%= link_to "Signup", new_user_registration_path %> |
+        <%= link_to "Login", new_user_session_path %>
+      <% end %>
+    </div>
+    
+  </div>
+</header>
