@@ -1,3 +1,5 @@
+<h1><%= t('.header') %></h1>
+
 <%= render 'form' %>
 
-<%= link_to 'Back to test', admin_test_path(@test) %>
+<%= link_to t('.back'), admin_test_path(@test) %>
