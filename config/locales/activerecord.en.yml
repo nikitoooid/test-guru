@@ -1,0 +1,18 @@
+en:
+  activerecord:
+    models:
+      test: "Test"
+      question: "Question"
+      answer: "Answer"
+
+    attributes:
+      test:
+        title: "Title"
+        questions: "Questions"
+      user:
+        first_name: "first name"
+        second_name: "second name"
+        
+    errors:
+      messages:
+        blank: "can't be blank"

@@ -1,2 +1,82 @@
 ru:
-  hello: "Привет, мир"
+  signup: "Регистрация"
+  login: "Войти"
+  logout: "Выйти"
+
+  welcome_guru: "Добро пожаловать, Гуру <b>%{name}</b>"
+  welcome_master: "Добро пожаловать, Мастер Гуру <b>%{first_name} %{last_name}</b>"
+
+  start_m: "Начать %{model}"
+  create_m: "Создать %{model}"
+  show: "Показать"
+  edit: "Редактировать"
+  delete: "Удалить"
+  actions: "Действия"
+
+  confirm_message: "Вы уверены?"
+
+  helpers:
+    label:
+      test:
+        title: "Название теста"
+        level: "Уровень сложности"
+        category_id: "Категория"
+    select:
+      prompt: "Выберите категорию"
+
+    submit:
+      create: "Создать %{model}"
+      update: "Обновить %{model}"
+      submit: "Сохранить %{model}"
+
+  shared:
+    footer:
+      credits: "Учебный проект в онлайн-школе Thinknetica."
+      author: "Никита Немодрук"
+    errors:
+      header:
+        one: "Обнаружена %{count} ошибка"
+        few: "Обнаружено %{count} ошибки"
+        many: "Обнаружено %{count} ошибок"
+        other: "Обнаружено %{count} ошибки"
+
+  tests:
+    index:
+      header: "Доступные Тесты"
+
+  test_passages:
+    show:
+      header: "Прохождение теста %{title}"
+      counter: "Вопрос %{current} из %{total}"
+      next: "Дальше"
+    result:
+      header: "Тест %{title} успешно пройден!"
+      passed: "Тест пройден!"
+      failed: "Тест провален!"
+      correct_answers: "%{level}% правильных ответов"
+      back: "Назад к тестам"
+
+  admin:
+    tests:
+      create:
+        success: "Тест успешно создан."
+        fail: "При создании теста произошла ошибка"
+      update:
+        success: "Тест успешно изменён."
+        fail: "При обновлении теста произошла ошибка"
+      index:
+        header: "Доступные Тесты"
+      new:
+        title: "Новый Тест"
+        back: "Назад к тестам"
+      edit:
+        title: "Редактировать тест"
+        back: "Назад к тестам"
+      show:
+        back: "Назад к тестам"
+      destroy:
+        success: "Тест удалён."
+
+  tests_mailer:
+    completed_test:
+      subject: "Вы успешно завершили тест на TestGuru!"
