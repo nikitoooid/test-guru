@@ -19,24 +19,24 @@ class Admin::TestsController < Admin::BaseController
     @test = current_user.created_tests.new(test_params)
 
     if @test.save
-      redirect_to admin_test_path(@test), notice: t('.success')
+      redirect_to admin_test_path(@test), flash: { success: t('.success') }
     else
-      redirect_to admin_tests_path, alert: t('.fail')
+      redirect_to admin_tests_path, flash: { danger: t('.fail') }
     end
   end
 
   def update
     if @test.update(test_params)
-      redirect_to admin_test_path(@test), notice: "Test #{@test.title} updated!"
+      redirect_to admin_test_path(@test), flash: { primary: "Test #{@test.title} updated!" }
     else
-      redirect_to admin_test_path(@test), alert: t('.fail')
+      redirect_to admin_test_path(@test), flash: { danger: t('.fail') }
     end 
   end
 
   def destroy
     @test.destroy
 
-    redirect_to admin_tests_path, notice: t('.success')
+    redirect_to admin_tests_path, flash: { danger: t('.success') }
   end
 
   private

@@ -1,11 +1,15 @@
 <h1><%= t('tests.index.header') %></h1>
 
-<table>
-  <tr>
-    <th><%= Test.human_attribute_name(:title) %></th>
-    <th><%= Test.human_attribute_name(:questions) %></th>
-    <th><%= t('actions') %></th>
-  </tr>
+<table class="table mt-3">
+  <thead>
+    <tr>
+      <th scope="col"><%= Test.human_attribute_name(:title) %></th>
+      <th scope="col"><%= Test.human_attribute_name(:questions) %></th>
+      <th scope="col"><%= t('actions') %></th>
+    </tr>
+  </thead>
 
-  <%= render @tests %>
+  <tbody>
+    <%= render @tests %>
+  </tbody>
 </table>

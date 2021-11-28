@@ -2,6 +2,7 @@ ru:
   signup: "Регистрация"
   login: "Войти"
   logout: "Выйти"
+  admin_panel: "Панель администратора"
 
   welcome_guru: "Добро пожаловать, Гуру <b>%{name}</b>"
   welcome_master: "Добро пожаловать, Мастер Гуру <b>%{first_name} %{last_name}</b>"

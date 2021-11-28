@@ -2,6 +2,7 @@ en:
   signup: "Signup"
   login: "Login"
   logout: "Logout"
+  admin_panel: "Admin panel"
 
   welcome_guru: "Welcome, <b>%{name}</b> Guru"
   welcome_master: "Welcome, <b>%{first_name} %{last_name}</b> Master Guru"
