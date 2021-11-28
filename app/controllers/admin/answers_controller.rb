@@ -17,7 +17,7 @@ class Admin::AnswersController < Admin::BaseController
     @answer = @question.answers.new(answer_params)
 
     if @answer.save
-      redirect_to admin_answer_path(@answer), alert: 'Answer created.'
+      redirect_to admin_answer_path(@answer), flash: { success: 'Answer created.' }
     else
       render :new
     end
@@ -25,7 +25,7 @@ class Admin::AnswersController < Admin::BaseController
 
   def update
     if @answer.update(answer_params)
-      redirect_to admin_answer_path(@answer), alert: 'Answer updated.'
+      redirect_to admin_answer_path(@answer), flash: { primary: 'Answer updated.' }
     else
       render :edit
     end
@@ -34,7 +34,7 @@ class Admin::AnswersController < Admin::BaseController
   def destroy
     @answer.destroy
 
-    redirect_to @answer.question
+    redirect_to admin_question_path(@answer.question), flash: { danger: 'Answer deleted.' }
   end
 
   private
