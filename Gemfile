@@ -34,6 +34,9 @@ gem 'faraday'
 # GitHub API
 gem "octokit", "~> 4.0"
 
+# GitHub Octicons
+gem "octicons_helper"
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

@@ -10,6 +10,9 @@ import "channels"
 import 'bootstrap/dist/js/bootstrap'
 import "bootstrap/dist/css/bootstrap"
 
+require("utilities/sorting")
+require("utilities/password_comparing")
+
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
