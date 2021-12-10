@@ -16,6 +16,9 @@ ru:
 
   confirm_message: "Вы уверены?"
 
+  description: "Вопрос к тесту '%{title}'"
+  content: "Question: %{body}"
+
   helpers:
     label:
       test:
@@ -56,6 +59,9 @@ ru:
       failed: "Тест провален!"
       correct_answers: "%{level}% правильных ответов"
       back: "Назад к тестам"
+    gist:
+      success: "Gist успешно создан: %{url}"
+      failure: "При создании gist возникла ошибка!"
 
   admin:
     tests:
@@ -77,6 +83,13 @@ ru:
         back: "Назад к тестам"
       destroy:
         success: "Тест удалён."
+    gists:
+      index:
+        header: "Все соданные Gists"
+        question: "Вопрос"
+        url: "URL"
+        user: "Пользователь"
+        back: "Назад к тестам"
 
   tests_mailer:
     completed_test:

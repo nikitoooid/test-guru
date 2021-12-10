@@ -1,0 +1,17 @@
+<h2><%= t('.header') %>:</h2>
+
+<table class="table mt-3">
+  <thead>
+    <tr>
+      <th scope="col"><%= t('.question') %></th>
+          <th scope="col"><%= t('.url') %></th>
+          <th scope="col"><%= t('.user') %></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%= render @gists %>
+  </tbody>
+</table>
+
+<%= link_to t('.back'), admin_tests_path %>

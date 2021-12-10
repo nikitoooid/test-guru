@@ -16,6 +16,9 @@ en:
 
   confirm_message: "Are you sure?"
 
+  description: "Question to test '%{title}'"
+  content: "Question: %{body}"
+
   helpers:
     label:
       test:
@@ -56,6 +59,9 @@ en:
       failed: "Test failed!"
       correct_answers: "%{level}% correct answers"
       back: "Back to tests"
+    gist:
+      success: "Gist was successfully created: %{url}"
+      failure: "An error occurred while saving gist!"
       
   admin:
     tests:
@@ -77,6 +83,13 @@ en:
         back: "Back to tests"
       destroy:
         success: "Test deleted."
+    gists:
+      index:
+        header: "All created Gists"
+        question: "Question"
+        url: "URL"
+        user: "User"
+        back: "Back to tests"
 
   tests_mailer:
     completed_test:
