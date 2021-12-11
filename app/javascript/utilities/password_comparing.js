@@ -8,13 +8,16 @@ function comparePasswords() {
   var pass1 = document.querySelector('#user_password').value
   var pass2 = document.querySelector('#user_password_confirmation').value
 
-  if (pass2 && pass1 != pass2) {
+  if(!pass2) {
+    document.querySelector('#user_password_confirmation').classList.remove('invalid', 'valid')
+    return
+  }
+  
+  if (pass1 != pass2) {
     document.querySelector('#user_password_confirmation').classList.add('invalid')
     document.querySelector('#user_password_confirmation').classList.remove('valid')
-  } else if (pass2 && pass1 == pass2) {
+  } else {
     document.querySelector('#user_password_confirmation').classList.add('valid')
     document.querySelector('#user_password_confirmation').classList.remove('invalid')
-  } else {
-    document.querySelector('#user_password_confirmation').classList.remove('invalid', 'valid')
-  }
+  } 
 }
