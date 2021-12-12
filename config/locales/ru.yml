@@ -83,6 +83,9 @@ ru:
         back: "Назад к тестам"
       destroy:
         success: "Тест удалён."
+      form_inline:
+        submit: "Сохранить"
+      
     gists:
       index:
         header: "Все соданные Gists"
