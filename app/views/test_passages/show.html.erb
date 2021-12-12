@@ -4,6 +4,12 @@
   <%= t('.counter', current: @test_passage.current_question_number, total: @test_passage.test.questions.count) %>
 </p>
 
+<%= content_tag :div,
+                class: 'progress',
+                data: { progress: (@test_passage.current_question_number.to_f - 1) / @test_passage.test.questions.count * 100 } do %>
+  <div class="progress-bar"></div>
+<% end %>
+
 <p>
   <%= @test_passage.current_question.body %>
 </p>
