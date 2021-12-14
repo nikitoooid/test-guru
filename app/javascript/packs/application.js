@@ -7,9 +7,10 @@ import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
+import "bootstrap/js/bootstrap.bundle.min.js"
 
-require("bootstrap/js/bootstrap.bundle.min")
-require("bootstrap/css/bootstrap.min")
+// require("bootstrap/js/bootstrap.bundle.min")
+// require("bootstrap/css/bootstrap.min")
 require("utilities/sorting")
 require("utilities/password_comparing")
 require("utilities/form_inline")
