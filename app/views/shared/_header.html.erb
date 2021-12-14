@@ -13,6 +13,12 @@
             <%= link_to 'Gists', admin_gists_path, class: "nav-link" %>
           </li>
         <% end %>
+
+        <% if user_signed_in? %>
+          <li class="nav-item">
+            <%= link_to t('feedback'), new_feedback_path, class: 'nav-link' %>
+          </li>
+        <% end %>
       </ul>
     </div>
 

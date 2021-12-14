@@ -13,8 +13,11 @@ ru:
   edit: "Редактировать"
   delete: "Удалить"
   actions: "Действия"
+  feedback: "Оставить отзыв"
 
   confirm_message: "Вы уверены?"
+  success_dispatch: "Сообщение успешно отправлено!"
+  failure_dispatch: "Ошибка отправки сообщения!"
 
   description: "Вопрос к тесту '%{title}'"
   content: "Question: %{body}"
