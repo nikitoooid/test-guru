@@ -4,12 +4,11 @@ class FeedbacksController < ApplicationController
   end
 
   def create
-    @feedback = feedback_params
-    if @feedback
-      @feedback[:user] = current_user.email
-
-      FeedbacksMailer.feedback(@feedback).deliver_now
-      redirect_to root_path, notice: t('success_dispatch')
+    if feedback_params
+      FeedbacksMailer.send_feedback(from: current_user.email,
+                                    title: feedback_params[:title],
+                                    body: feedback_params[:body]).deliver_now
+      redirect_to root_path, flash: { notice: t('success_dispatch'), notice: feedback_params }
     else
       render new_feedback_path, alert: t('failure_dispatch')
     end

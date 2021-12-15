@@ -1,10 +1,6 @@
 class FeedbacksMailer < ApplicationMailer
   
-  def feedback(feedback)
-    @title = feedback[:title]
-    @body = feedback[:body]
-    @user = feedback[:user]
-
+  def send_feedback(title:, body:, from:)
     mail to: ENV['FEEDBACK_TO'], subject: "New feedback: #{@title}"
   end
 

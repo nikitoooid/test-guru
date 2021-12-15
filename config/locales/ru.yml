@@ -56,6 +56,8 @@ ru:
       header: "Прохождение теста %{title}"
       counter: "Вопрос %{current} из %{total}"
       next: "Дальше"
+    update:
+      no_answer: "Выберите вопрос!"
     result:
       header: "Тест %{title} успешно пройден!"
       passed: "Тест пройден!"

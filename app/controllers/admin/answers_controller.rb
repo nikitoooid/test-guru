@@ -19,6 +19,7 @@ class Admin::AnswersController < Admin::BaseController
     if @answer.save
       redirect_to admin_answer_path(@answer), flash: { success: 'Answer created.' }
     else
+      flash[:danger] = 'Answer not created!'
       render :new
     end
   end
@@ -27,6 +28,7 @@ class Admin::AnswersController < Admin::BaseController
     if @answer.update(answer_params)
       redirect_to admin_answer_path(@answer), flash: { primary: 'Answer updated.' }
     else
+      flash[:danger] = 'Answer not updated!'
       render :edit
     end
   end
