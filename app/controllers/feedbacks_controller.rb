@@ -8,7 +8,7 @@ class FeedbacksController < ApplicationController
       FeedbacksMailer.send_feedback(from: current_user.email,
                                     title: feedback_params[:title],
                                     body: feedback_params[:body]).deliver_now
-      redirect_to root_path, flash: { notice: t('success_dispatch'), notice: feedback_params }
+      redirect_to root_path, notice: t('success_dispatch')
     else
       render new_feedback_path, alert: t('failure_dispatch')
     end
