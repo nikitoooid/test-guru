@@ -19,6 +19,6 @@ class Test < ApplicationRecord
   end
 
   def self.ready_to_pass
-    joins(:questions).where.not(questions: nil)
+    joins(:questions).where.not(questions: nil).group('id')
   end
 end
