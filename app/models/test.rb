@@ -17,4 +17,8 @@ class Test < ApplicationRecord
   def self.titles_by_category(category_name)
     joins(:category).by_category(category_name).order(title: :desc).pluck(:title)
   end
+
+  def self.ready_to_pass
+    joins(:questions).where.not(questions: nil)
+  end
 end
