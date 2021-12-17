@@ -22,7 +22,8 @@ class Admin::TestsController < Admin::BaseController
     if @test.save
       redirect_to admin_test_path(@test), flash: { success: t('.success') }
     else
-      redirect_to admin_tests_path, flash: { danger: t('.fail') }
+      flash[:danger] = t('.fail')
+      render :new
     end
   end
 
@@ -30,7 +31,8 @@ class Admin::TestsController < Admin::BaseController
     if @test.update(test_params)
       redirect_to admin_test_path(@test), flash: { primary: "Test #{@test.title} updated!" }
     else
-      redirect_to admin_test_path(@test), flash: { danger: t('.fail') }
+      flash[:danger] = t('.fail')
+      render :edit
     end 
   end
 

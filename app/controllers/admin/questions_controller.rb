@@ -23,7 +23,8 @@ class Admin::QuestionsController < Admin::BaseController
     if @question.save
       redirect_to admin_question_path(@question), flash: { success: 'Question created!' }
     else
-      redirect_to admin_tests_path, flash: { danger: 'Question not created!' }
+      flash[:danger] = 'Question not created!'
+      render :new
     end
   end
 
@@ -32,7 +33,8 @@ class Admin::QuestionsController < Admin::BaseController
     if @question.update(question_params)
       redirect_to admin_question_path(@question), flash: { primary: 'Question updated!' }
     else
-      redirect_to admin_question_path(@question), flash: { danger: 'Question updating failed!' }
+      flash[:danger] = 'Question updating failed!'
+      render :edit
     end 
   end
 

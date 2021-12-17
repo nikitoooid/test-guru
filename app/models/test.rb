@@ -1,7 +1,7 @@
 class Test < ApplicationRecord
   belongs_to :category
-  has_many :questions, :dependent => :destroy
-  has_many :test_passages, :dependent => :destroy
+  has_many :questions, dependent: :destroy
+  has_many :test_passages, dependent: :destroy
   has_many :users, through: :test_passages
   belongs_to :author, class_name: 'User', foreign_key: 'user_id'
 
@@ -16,5 +16,9 @@ class Test < ApplicationRecord
 
   def self.titles_by_category(category_name)
     joins(:category).by_category(category_name).order(title: :desc).pluck(:title)
+  end
+
+  def self.ready_to_pass
+    joins(:questions).where.not(questions: nil)
   end
 end

@@ -13,8 +13,11 @@ en:
   edit: "Edit"
   delete: "Delete"
   actions: "Actions"
+  feedback: "Leave your feedback"
 
   confirm_message: "Are you sure?"
+  success_dispatch: "Message successfully sent!"
+  failure_dispatch: "Message sending error!"
 
   description: "Question to test '%{title}'"
   content: "Question: %{body}"
@@ -53,6 +56,8 @@ en:
       header: "Passing the %{title} test"
       counter: "Question %{current} of %{total}"
       next: "Next"
+    update:
+      no_answer: "Select answer!"
     result:
       header: "Test %{title} successfully passed!"
       passed: "Test passed!"
