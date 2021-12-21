@@ -1,0 +1,30 @@
+<%= form_with model: [:admin, @badge] do |form| %>
+
+  <div class="form-floating mb-3">
+    <%= form.text_field :title, class: 'form-control' %>
+    <%= form.label :title %><br>
+  </div>
+
+  <div class="form-floating mb-3">
+    <%= form.text_area :description, class: 'form-control' %>
+    <%= form.label :description %><br>
+  </div>
+
+  <div class="mb-3">
+    <%= form.select :rule, @rules, class: 'form-select'%>
+    <%= form.label :rule %><br>
+  </div>
+
+  <div class="form-floating mb-3">
+    <%= form.text_area :rule_value, class: 'form-control' %>
+    <%= form.label :rule_value %><br>
+  </div>
+
+  <div class="form-floating mb-3">
+    <%= form.text_field :img_name, class: 'form-control', default: @badge.img_name %>
+    <%= form.label :image_name %><br>
+  </div>
+
+  <%= form.submit t('.create'), class: 'btn btn-primary' %>
+
+<% end %>

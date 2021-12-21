@@ -8,7 +8,7 @@ class TestPassagesController < ApplicationController
   end
 
   def result
-    
+    @received_badges = BadgeService.new(@test_passage).call
   end
 
   def gist

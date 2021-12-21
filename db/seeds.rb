@@ -3,6 +3,7 @@ Question.delete_all
 Test.delete_all
 User.delete_all
 Category.delete_all
+Badge.delete_all
 
 categories = Category.create!([
   {title: 'Ruby'},
@@ -22,11 +23,33 @@ tests = users[0].created_tests.create!([
   {title: 'Rails pro', level: 5, category_id: categories[1].id}
 ])
 
+badges = Badge.create!([
+  {title: 'No rule badge 1', description: 'This badge dont have any rule.', rule: 'no rule'},
+  {title: 'No rule badge 2', description: 'This badge dont have any rule.', rule: 'no rule'},
+  {title: 'No rule badge 3', description: 'This badge dont have any rule.', rule: 'no rule'}
+])
+
 tests.each do |t|
-  t.questions.create!(body: 'Test question')
+  t.questions.create!([
+    {body: 'Test question 1'},
+    {body: 'Test question 2'},
+    {body: 'Test question 3'}
+  ])
 end
+
+Question.all.each do |q|
+  q.answers.create!([
+    {body: 'Correct answer', correct: true},
+    {body: 'Incorrect answer', correct: false},
+    {body: 'Incorrect answer 2', correct: false}
+  ])
+end
+
+users[0].badges.push Badge.first
 
 p "Created #{Category.count} categories"
 p "Created #{User.count} users"
 p "Created #{Test.count} tests"
-p "Created #{User.count} questions"
+p "Created #{Question.count} questions"
+p "Created #{Answer.count} answers"
+p "Created #{Badge.count} badges"

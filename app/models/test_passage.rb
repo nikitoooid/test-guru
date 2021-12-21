@@ -5,6 +5,7 @@ class TestPassage < ApplicationRecord
 
   before_validation :before_validation_set_first_question, on: :create
   before_update :before_update_set_next_question
+  before_update :before_update_set_passed
 
   PASSAGE_LIMIT = 85
 
@@ -46,4 +47,9 @@ class TestPassage < ApplicationRecord
   def before_update_set_next_question
     self.current_question = test.questions.order(:id).where('id > ?', current_question.id).first
   end
+  
+  def before_update_set_passed
+    self.passed = true if passed?
+  end
+
 end
