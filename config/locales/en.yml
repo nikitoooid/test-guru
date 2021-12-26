@@ -28,6 +28,7 @@ en:
         title: "Test Title"
         level: "Difficulity level"
         category_id: "Category"
+        timer: "Timer"
     select:
       prompt: "Select category"
 
@@ -98,6 +99,9 @@ en:
         url: "URL"
         user: "User"
         back: "Back to tests"
+
+    badges:
+
 
   tests_mailer:
     completed_test:

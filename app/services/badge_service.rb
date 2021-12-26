@@ -30,13 +30,13 @@ class BadgeService
   def category_rule_observed?(badge)
     success_tests_by_category = passed.by_category(badge.rule_value).uniq.count
     all_tests_by_category = Test.by_category(badge.rule_value).count
-    success_tests_by_category == all_tests_by_category
+    success_tests_by_category == all_tests_by_category && !@current_user.badges.include?(badge)
   end
 
   def level_rule_observed?(badge)
     success_tests_by_level = passed.by_level(badge.rule_value).uniq.count
     all_tests_by_level = Test.by_level(badge.rule_value).count
-    success_tests_by_level == all_tests_by_level
+    success_tests_by_level == all_tests_by_level && !@current_user.badges.include?(badge)
   end
 
   def passed

@@ -4,14 +4,22 @@ en:
       test: "Test"
       question: "Question"
       answer: "Answer"
+      badge: "Badge"
 
     attributes:
       test:
         title: "Title"
         questions: "Questions"
+        timer: "Timer"
       user:
         first_name: "first name"
         second_name: "second name"
+      badge:
+        title: 'Badge title'
+        description: 'Description'
+        rule: 'Rule'
+        rule_value: 'Rule value'
+        img_name: 'Image'
         
     errors:
       messages:

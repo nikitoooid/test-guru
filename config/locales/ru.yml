@@ -28,6 +28,8 @@ ru:
         title: "Название теста"
         level: "Уровень сложности"
         category_id: "Категория"
+        timer: "Таймер"
+
     select:
       prompt: "Выберите категорию"
 
@@ -79,10 +81,10 @@ ru:
       index:
         header: "Доступные Тесты"
       new:
-        title: "Новый Тест"
+        header: "Новый Тест"
         back: "Назад к тестам"
       edit:
-        title: "Редактировать тест"
+        header: "Редактировать тест"
         back: "Назад к тестам"
       show:
         back: "Назад к тестам"
@@ -98,6 +100,8 @@ ru:
         url: "URL"
         user: "Пользователь"
         back: "Назад к тестам"
+
+    badges:
 
   tests_mailer:
     completed_test:

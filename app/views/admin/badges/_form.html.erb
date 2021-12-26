@@ -10,9 +10,9 @@
     <%= form.label :description %><br>
   </div>
 
-  <div class="mb-3">
-    <%= form.select :rule, @rules, class: 'form-select'%>
+  <div class="form mb-3">
     <%= form.label :rule %><br>
+    <%= form.select :rule, @rules, class: 'form-select'%>
   </div>
 
   <div class="form-floating mb-3">
@@ -22,9 +22,9 @@
 
   <div class="form-floating mb-3">
     <%= form.text_field :img_name, class: 'form-control', default: @badge.img_name %>
-    <%= form.label :image_name %><br>
+    <%= form.label :img_name %><br>
   </div>
 
-  <%= form.submit t('.create'), class: 'btn btn-primary' %>
+  <%= form.submit nil, class: 'btn btn-primary' %>
 
 <% end %>

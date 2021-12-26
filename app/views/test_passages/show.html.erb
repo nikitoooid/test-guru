@@ -1,5 +1,9 @@
 <h1><%= t('.header', title: @test_passage.test.title) %></h1>
 
+<%= content_tag :div, nil,
+                class: 'passage_timer',
+                data: { passageid: @test_passage.id, timer: @time_left } %>
+
 <p>
   <%= t('.counter', current: @test_passage.current_question_number, total: @test_passage.test.questions.count) %>
 </p>

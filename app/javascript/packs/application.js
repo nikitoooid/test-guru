@@ -13,6 +13,7 @@ require("utilities/sorting")
 require("utilities/password_comparing")
 require("utilities/form_inline")
 require("utilities/progress_bar")
+require("utilities/timer")
 
 Rails.start()
 Turbolinks.start()

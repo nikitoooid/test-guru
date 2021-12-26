@@ -4,14 +4,22 @@ ru:
       test: "Тест"
       question: "Вопрос"
       answer: "Ответ"
+      badge: "Бейдж"
 
     attributes:
       test:
         title: "Название"
         questions: "Вопросы"
+        timer: "Таймер"
       user:
         first_name: "Имя"
         second_name: "Фамилия"
+      badge:
+        title: "Название бейджа"
+        description: "Описание"
+        rule: "Правило"
+        rule_value: "Значение правила"
+        img_name: "Изображение"
 
     errors:
       messages:
