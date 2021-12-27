@@ -1,0 +1,15 @@
+<div class="col-md-3 mt-4">
+  <div class="card">
+    <%= image_tag badge.img_name, class: "card-img-top" %>
+    <div class="card-body">
+      <h5 class="card-title">
+        <%= badge.title %>
+      </h5>
+      <p class="card-text">
+        <%= badge.description %>
+      </p>
+
+      <%= link_to t('show'), badge_path(badge), class: 'btn btn-primary' %>
+    </div>
+  </div>
+</div>

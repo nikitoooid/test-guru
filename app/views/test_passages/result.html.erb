@@ -14,4 +14,8 @@
   <%= content_tag :p, t('.correct_answers', level: @test_passage.success_level), class: css_class %>
 </p>
 
+<div class="row">
+  <%= render @received_badges %>
+</div>
+
 <%= link_to t('.back'), tests_path %>

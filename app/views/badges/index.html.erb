@@ -1,0 +1,17 @@
+<h1><%= t('.header') %></h1>
+
+<%= render 'shared/errors', resource: @test %>
+
+<div class="row mt-4">
+  <h2><%= t('.user_badges') %></h2>
+</div>
+<div class="row">
+  <%= @user_badges.empty? ? 'No badges' : render(@user_badges) %>
+</div>
+
+<div class="row mt-4">
+  <h2><%= t('.all_badges') %></h2>
+</div>
+<div class="row">
+  <%= render @badges %>
+</div>
