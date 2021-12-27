@@ -29,6 +29,18 @@ class TestPassage < ApplicationRecord
     (correct_questions.to_f / test.questions.count * 100).round(0)
   end
 
+  def timer
+    test.timer * 60
+  end
+
+  def time_left
+    self.timer == 0 ? 0 : self.timer - (Time.now - created_at.to_time)
+  end
+
+  def expired?
+    self.time_left < 0
+  end
+
   private
 
   def before_validation_set_first_question
