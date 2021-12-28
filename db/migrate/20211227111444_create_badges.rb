@@ -11,12 +11,5 @@ class CreateBadges < ActiveRecord::Migration[6.1]
 
       t.index :title, unique: true
     end
-
-    create_join_table :badges, :users do |t|
-      t.index :badge_id
-      t.index :user_id
-    end
-
-    add_column :test_passages, :passed, :boolean, default: false
   end
 end
