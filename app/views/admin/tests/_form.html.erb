@@ -1,19 +1,26 @@
 <%= form_with model: [:admin, @test] do |form| %>
 
-  <p>
-    <%= form.label :title %><br>
-    <%= form.text_field :title %>
-  </p>
+  <div class="form-floating mb-3">
+    <%= form.text_field :title, class: 'form-control' %>
+    <%= form.label :title %>
+  </div>
 
-  <p>
-    <%= form.label :category_id %><br>
-    <%= form.collection_select :category_id, Category.order(:title), :id, :title, {:prompt => true} %>
-  </p>
+  <div class="form mb-3">
+    <%= form.label :category_id %>
+    <%= form.collection_select :category_id,
+                Category.order(:title), :id, :title, {:prompt => true},
+                class: 'form-select' %>
+  </div>
 
-  <p>
-    <%= form.label :level %><br>
-    <%= form.number_field :level %>
-  </p>
+  <div class="form-floating mb-3">
+    <%= form.number_field :level, class: 'form-control' %>
+    <%= form.label :level %>
+  </div>
+
+  <div class="form-floating mb-3">
+    <%= form.number_field :timer, class: 'form-control' %>
+    <%= form.label :timer %>
+  </div>
 
   <%= form.submit %>
 
