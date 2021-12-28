@@ -4,11 +4,10 @@ class TestPassagesController < ApplicationController
   before_action :set_test_passage, only: %i[show result update gist]
 
   def show
-
   end
 
   def result
-    
+    @received_badges = BadgeService.new(@test_passage).call
   end
 
   def gist
@@ -26,6 +25,8 @@ class TestPassagesController < ApplicationController
   end
 
   def update
+    @test_passage.passed = true if @test_passage.passed?
+
     params[:answer_ids].nil? ? flash.now[:danger] = t('.no_answer') :  @test_passage.accept!(params[:answer_ids])
 
     if @test_passage.completed? || @test_passage.expired?

@@ -1,0 +1,9 @@
+<h1><%= t('.header') %></h1>
+
+<%= render 'shared/errors', resource: @test %>
+
+<div class="row">
+  <%= render @badges %>
+</div>
+
+<%= link_to 'Create new Badge', new_admin_badge_path, class: 'btn btn-primary btn-sm mt-3' %>
