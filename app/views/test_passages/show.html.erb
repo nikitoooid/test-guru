@@ -1,5 +1,9 @@
 <h1><%= t('.header', title: @test_passage.test.title) %></h1>
 
+<%= content_tag :div, nil,
+                class: 'passage_timer',
+                data: { timer: @test_passage.time_left } %>
+
 <p>
   <%= t('.counter', current: @test_passage.current_question_number, total: @test_passage.test.questions.count) %>
 </p>
@@ -23,5 +27,5 @@
   <% end %>
 
   <p><%= link_to 'Gist Question', gist_test_passage_path(@test_passage), method: :post %></p>
-  <p><%= form.submit t('.next') %></p>
+  <p><%= form.submit t('.next'), class: 'submit' %></p>
 <% end %>
